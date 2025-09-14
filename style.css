@@ -147,3 +147,40 @@ a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+
+/* Styled table for consistency */
+table {
+    width: 90%;
+    max-width: 900px;
+    margin: 32px auto 24px auto;
+    border-collapse: collapse;
+    background: #f0f4fa;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    font-size: 1.05em;
+}
+
+thead {
+    background: #e3f2fd;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: center;
+    border-bottom: 1px solid #dbe6ee;
+}
+
+th {
+    color: #1565c0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+    background: #f6faff;
+}

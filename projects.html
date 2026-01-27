@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects – Chuhui Han</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn { from {opacity:0; transform: translateY(8px);} to {opacity:1; transform: translateY(0);} }
+    .fade-in { opacity:0; animation: fadeIn 700ms ease-out 80ms forwards; }
+    @media (prefers-reduced-motion: reduce) { .fade-in { animation: none; opacity: 1; } }
+  </style>
+</head>
+
+<body class="min-h-screen bg-zinc-900 text-zinc-100 flex items-center justify-center">
+  <main class="fade-in w-full">
+    <div class="mx-auto max-w-5xl px-6 py-12 md:py-20 space-y-12">
+
+      <header class="flex flex-col items-center md:items-start gap-6 text-center md:text-left">
+        <a href="index.html" class="font-mono text-sm text-zinc-400 underline decoration-dotted underline-offset-4 hover:text-white">
+          ← Back Home
+        </a>
+        <h1 class="font-serif italic text-4xl md:text-5xl lg:text-6xl leading-tight">
+          Projects
+        </h1>
+        <p class="font-mono text-zinc-400 text-sm">
+          Some of the things I’ve built and am proud of.
+        </p>
+      </header>
+
+      <section class="flex items-center justify-center py-24">
+        <p class="font-mono text-zinc-500 text-sm md:text-base italic">
+          Work in progress — check back soon!
+        </p>
+      </section>
+
+      <footer class="pt-10 border-t border-white/10 text-center md:text-left">
+        <p class="font-mono text-xs text-zinc-500">
+          © 2025 Chuhui Han
+        </p>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

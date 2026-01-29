@@ -7,37 +7,51 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes fadeIn { from {opacity:0; transform: translateY(8px);} to {opacity:1; transform: translateY(0);} }
-    .fade-in { opacity:0; animation: fadeIn 700ms ease-out 80ms forwards; }
-    @media (prefers-reduced-motion: reduce) { .fade-in { animation: none; opacity: 1; } }
-    /* hide native scrollbars where desired */
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    .no-scrollbar::-webkit-scrollbar { display: none; }
+    @keyframes typeWriter { 
+      from { width: 0; } 
+      to { width: 100%; } 
+    }
+    
+    /* Name fade-in */
+    .fade-title { opacity:0; animation: fadeIn 700ms ease-out 0ms forwards; }
+
+    .fade-phrase { opacity: 0; animation:fadeIn 400ms ease-out 700ms forwards; }
+    
+    /* Links fade-in */
+    .fade-projects { opacity:0; animation: fadeIn 700ms ease-out 1050ms forwards; }
+    
+    @media (prefers-reduced-motion: reduce) { 
+      .fade-name, .fade-berkeley, .fade-photo, .fade-links { 
+        animation: none; 
+        opacity: 1; 
+      } 
+    }
   </style>
 </head>
 
-<body class="min-h-screen bg-[#191A1A] text-zinc-100 flex items-center justify-center">
-  <main class="fade-in w-full">
-    <div class="mx-auto max-w-5xl px-6 py-12 md:py-20 space-y-12">
+<body class="h-screen bg-[#191A1A] text-zinc-100 flex flex-col overflow-hidden">
+  <main class="w-full flex flex-col overflow-hidden flex-1">
+    <div class="mx-auto max-w-5xl w-full px-6 py-8 md:py-12 space-y-8 flex flex-col overflow-hidden flex-1">
 
-      <header class="flex flex-col items-center md:items-start gap-6 text-center md:text-left">
+      <header class="flex flex-col items-center md:items-start gap-6 text-center md:text-left flex-shrink-0">
               <a href="index.html" class="font-mono group w-fit text-zinc-200 underline decoration-dotted underline-offset-4 hover:text-white text-sm">
                   <span class="ml-1 inline-block transition-transform group-hover:translate-x-[-0.2rem]">←</span>
                   back home
               </a>
-        <h1 class="font-serif italic text-4xl md:text-5xl lg:text-6xl leading-tight">
+        <h1 class="font-[Newsreader] italic text-3xl md:text-4xl lg:text-5xl leading-tight fade-title">
           Projects and Experience
         </h1>
-        <p class="font-mono text-zinc-400 text-sm">
-          Some of the things I’ve built and am proud of.
+        <p class="font-mono text-zinc-400 text-sm fade-phrase">
+          TEMP
         </p>
       </header>
 
-      <ol class="relative border-l border-white/10 max-h-[56vh] overflow-y-auto pl-6 no-scrollbar">
+      <ol class="relative border-l border-white/10 overflow-y-auto pl-6 no-scrollbar flex-1 fade-projects">
           <li class="timeline-item relative mb-6 pl-4">
             <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
             <div class="content pr-2 no-scrollbar">
               <time class="text-sm font-mono leading-none text-body">NOV 2026 - Current</time>
-              <h3 class="text-lg font-mono bold text-heading my-2">Chefin</h3>
+              <h3 class="text-lg font-mono bold text-heading my-2">CookCompanion</h3>
               <p class="mb-4 text-base font-normal text-body">Cooking app that takes in different ingredients and outputs a recipe that attempts to use all of the ingredients given.
                 Built with express.js, next.js, saving ingredients/recipes to mongoDB, and styled with shadcn/ui. Currently testing different recipe APIs to find best performing.
               </p>
@@ -54,9 +68,9 @@
             <div class="content pr-2 no-scrollbar">
               <time class="mb-1 text-sm font-mono leading-none text-body">NOV 2025 - DEC 2025</time>
               <h3 class="text-lg font-mono bold text-heading my-2">Semiconductor Market Prediction</h3>
-              <p class="mb-4 text-base font-normal text-body">Worked in a group of 5 to train and test four different machine learning models to predict semiconductor market trends. Used historical data from the semiconductor industry and financial 
+              <p class="mb-4 text-base font-normal text-body">Worked in a group of 5 to train and test three different machine learning models to predict semiconductor market trends. Used historical data from the semiconductor industry and financial 
                 markets to build predictive models.</p>
-              <a href="#" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+              <a href="media/mlreport.pdf" target = "_blank" rel = "noopener noreferrer" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
                 market prediction writeup
               </a>
             </div>
@@ -67,7 +81,7 @@
               <time class="mb-1 text-sm font-mono leading-none text-body">AUG 2025 - DEC 2025</time>
               <h3 class="text-lg font-mono bold text-heading my-2">Computer Vision</h3>
               <p class="mb-4 text-base font-normal text-body">Collection of projects done for a computer vision course at UC Berkeley. Includes projects on image classification, object detection, and image segmentation using PyTorch and OpenCV.</p>
-              <a href="#" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+              <a href="https://chuhuihan.me/cs180-portfolio/index.html" target = "_blank" rel = "noopener noreferrer" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
                 cs180 berkeley
               </a>
             </div>
@@ -82,7 +96,7 @@
                 team of 5 to design and implement the app using AGILE methodology over a span of 8 weeks; presented final product to ~200 atendees at the Jacobs Hall of Design 
                 at UC Berkeley. 
               </p>
-              <a href="#" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+              <a href="https://github.com/vjchen03/perceptrix" target = "_blank" rel = "noopener noreferrer" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
                 github
               </a>
             </div>
@@ -122,6 +136,9 @@
               <time class="mb-1 text-sm font-mono leading-none text-body">MAR 2022 - MAY 2022</time>
               <h3 class="text-lg font-mono bold text-heading my-2">Gitlet</h3>
               <p class="mb-4 text-base font-normal text-body">loren ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl eget nunc.</p>
+              <a href="https://github.com/chuhuihan/gitlet" target = "_blank" rel = "noopener noreferrer" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+                github
+              </a>
             </div>
           </li>
       </ol>

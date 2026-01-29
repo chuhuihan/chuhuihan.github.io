@@ -1,4 +1,9 @@
 /* Using Tailwind utilities instead; file intentionally left blank. */
-	position: relative;
+	/* position: relative; */
 
-white-space: pre-line;
+.newsreader-<Newsreader> {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}

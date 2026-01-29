@@ -5,28 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects – Chuhui Han</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes fadeIn { from {opacity:0; transform: translateY(8px);} to {opacity:1; transform: translateY(0);} }
-    @keyframes typeWriter { 
-      from { width: 0; } 
-      to { width: 100%; } 
-    }
-    
-    /* Name fade-in */
-    .fade-title { opacity:0; animation: fadeIn 700ms ease-out 0ms forwards; }
-
-    .fade-phrase { opacity: 0; animation:fadeIn 400ms ease-out 700ms forwards; }
-    
-    /* Links fade-in */
-    .fade-projects { opacity:0; animation: fadeIn 700ms ease-out 1050ms forwards; }
-    
-    @media (prefers-reduced-motion: reduce) { 
-      .fade-name, .fade-berkeley, .fade-photo, .fade-links { 
-        animation: none; 
-        opacity: 1; 
-      } 
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="h-screen bg-[#191A1A] text-zinc-100 flex flex-col overflow-hidden">
@@ -42,7 +21,7 @@
           Projects and Experience
         </h1>
         <p class="font-mono text-zinc-400 text-sm fade-phrase">
-          TEMP
+          <span class="typewriter">TEMPORARY SENTANCE JUST FOR TESTING</span>
         </p>
       </header>
 
@@ -142,50 +121,6 @@
             </div>
           </li>
       </ol>
-
-      <!-- <script>
-        (function(){
-          const container = document.querySelector('.border-l');
-          const items = document.querySelectorAll('.timeline-item');
-          let currentActive = null;
-
-          function setActive(item){
-            if(currentActive === item) return;
-            items.forEach(i=> i.classList.remove('is-active'));
-            if(item) item.classList.add('is-active');
-            currentActive = item;
-          }
-
-          // hover sets active temporarily by styling the dot directly
-          items.forEach(item=>{
-            const dot = item.querySelector('.dot');
-            item.addEventListener('mouseenter', ()=>{ dot.classList.add('bg-orange-500','scale-110','ring-4','ring-orange-500/20'); });
-            item.addEventListener('mouseleave', ()=>{
-              // remove hover styles; observer will restore active style
-              dot.classList.remove('bg-orange-500','scale-110','ring-4','ring-orange-500/20');
-            });
-          });
-
-          // IntersectionObserver to keep active dot in view while scrolling
-          const observerRoot = container;
-          const observer = new IntersectionObserver((entries)=>{
-            // pick the entry with largest intersectionRatio
-            let visible = entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio - a.intersectionRatio)[0];
-            if(visible){
-              const item = visible.target.closest('.timeline-item');
-              setActive(item);
-              document.querySelectorAll('.dot').forEach(d=> d.classList.remove('bg-orange-500','scale-110','ring-4','ring-orange-500/20'));
-              const dot = item.querySelector('.dot');
-              if(dot) dot.classList.add('bg-orange-500','scale-110','ring-4','ring-orange-500/20');
-            }
-          },{ root: observerRoot, threshold: [0.25,0.5,0.75] });
-
-          items.forEach(i=> {
-            const content = i.querySelector('.content');
-            if(content) observer.observe(content);
-          });
-        })();
-      </script> -->
 
       <footer class="pt-10 border-t border-white/10 text-center md:text-left">
         <p class="font-mono text-xs text-zinc-500">

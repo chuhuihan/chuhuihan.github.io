@@ -6,38 +6,7 @@
   <title>Chuhui Han</title>
   <!-- TailwindCSS via CDN only (no build setup needed) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes fadeIn { from {opacity:0; transform: translateY(8px);} to {opacity:1; transform: translateY(0);} }
-    @keyframes typeWriter { 
-      from { width: 0; } 
-      to { width: 100%; } 
-    }
-    
-    /* Name fade-in */
-    .fade-name { opacity:0; animation: fadeIn 700ms ease-out 0ms forwards; }
-    
-    /* Berkeley text letter-by-letter */
-    .fade-berkeley { 
-      opacity: 0;
-      animation: fadeIn 500ms ease-out 500ms forwards;
-      display: inline-block;
-    }
-
-    .fade-email { opacity: 0; animation:fadeIn 700ms ease-out 0ms forwards; }
-    
-    /* Photo fade-in */
-    .fade-photo { opacity:0; animation: fadeIn 500ms ease-out 1000ms forwards; }
-    
-    /* Links fade-in */
-    .fade-links { opacity:0; animation: fadeIn 500ms ease-out 1300ms forwards; }
-    
-    @media (prefers-reduced-motion: reduce) { 
-      .fade-name, .fade-berkeley, .fade-photo, .fade-links { 
-        animation: none; 
-        opacity: 1; 
-      } 
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="min-h-screen bg-[#191A1A] text-zinc-100 flex items-center justify-center">
   <main class="w-full">
@@ -50,8 +19,8 @@
             <span class="block">Han</span>
           </h1>
 
-          <p class="font-mono mx-auto md:mx-0 text-zinc-300 text-base text-sm fade-berkeley">
-            UC Berkeley 25' CS + DS
+          <p class="font-mono mx-auto md:mx-0 text-zinc-300 text-base text-sm">
+            <span class="typewriter">UC Berkeley 25' CS & DS</span>
           </p>
 
           <p>

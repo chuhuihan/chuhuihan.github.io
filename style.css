@@ -1,5 +1,37 @@
 /* Custom styles layered on top of Tailwind utilities */
 
+/* Accent color (single place to tweak) */
+:root {
+  --accent: #5397e4;
+  --accent-muted: rgba(83, 151, 228, 0.25);
+}
+
+/* Accent link hover */
+a.link-accent {
+  color: rgb(228 228 231);
+  transition: color 0.2s ease;
+}
+a.link-accent:hover {
+  color: var(--accent);
+}
+
+/* Accent for timeline dots */
+.timeline-item .dot {
+  background-color: var(--accent);
+  border-color: var(--accent-muted);
+}
+
+/* Project/button links: accent border and hover */
+a.btn-accent {
+  border-color: rgb(63 63 70);
+  color: rgb(228 228 231);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+a.btn-accent:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* Shared fade-in animation */
 @keyframes fadeIn {
   from {
@@ -55,23 +87,13 @@
   animation: fadeIn 700ms ease-out 1050ms forwards;
 }
 
-/* Typewriter animation for the Berkeley line */
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
 @keyframes blink-caret {
   from,
   to {
     border-color: transparent;
   }
   50% {
-    border-color: rgba(244, 244, 245, 0.8);
+    border-color: var(--accent);
   }
 }
 
@@ -79,11 +101,33 @@
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid rgba(244, 244, 245, 0.8);
+  border-right: 2px solid var(--accent);
   width: 0;
+  animation: blink-caret 0.75s step-end infinite 4;  /* caret only; width animation per class */
+}
+
+/* Index: 27 chars */
+.typewriter-home {
   animation:
-    typewriter 1.8s steps(24, end) 0.4s forwards,
+    typewriter-home 1.8s steps(24, end) 0.4s forwards,
     blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typewriter-home {
+  from { width: 0; }
+  to { width: 24ch; }
+}
+
+/* Projects: 42 chars */
+.typewriter-projects {
+  animation:
+    typewriter-projects 1.8s steps(42, end) 0.4s forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typewriter-projects {
+  from { width: 0; }
+  to { width: 102%; }
 }
 
 /* Simple design-system style helpers used on projects page */
@@ -105,6 +149,16 @@
 
 .border-default-medium {
   border-color: rgb(63 63 70);
+}
+
+
+/* Hide scrollbar but keep scrolling (projects timeline) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Motion reduction */

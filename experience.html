@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects – Chuhui Han</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn { from {opacity:0; transform: translateY(8px);} to {opacity:1; transform: translateY(0);} }
+    @keyframes typeWriter { 
+      from { width: 0; } 
+      to { width: 100%; } 
+    }
+    
+    /* Name fade-in */
+    .fade-title { opacity:0; animation: fadeIn 700ms ease-out 0ms forwards; }
+
+    .fade-phrase { opacity: 0; animation:fadeIn 400ms ease-out 700ms forwards; }
+    
+    /* Links fade-in */
+    .fade-projects { opacity:0; animation: fadeIn 700ms ease-out 1050ms forwards; }
+    
+    @media (prefers-reduced-motion: reduce) { 
+      .fade-name, .fade-berkeley, .fade-photo, .fade-links { 
+        animation: none; 
+        opacity: 1; 
+      } 
+    }
+  </style>
+</head>
+
+<body class="h-screen bg-[#191A1A] text-zinc-100 flex flex-col overflow-hidden">
+  <main class="w-full flex flex-col overflow-hidden flex-1">
+    <div class="mx-auto max-w-5xl w-full px-6 py-8 md:py-12 space-y-8 flex flex-col overflow-hidden flex-1">
+
+      <header class="flex flex-col items-center md:items-start gap-6 text-center md:text-left flex-shrink-0">
+              <a href="index.html" class="font-mono group w-fit text-zinc-200 underline decoration-dotted underline-offset-4 hover:text-white text-sm">
+                  <span class="ml-1 inline-block transition-transform group-hover:translate-x-[-0.2rem]">←</span>
+                  back home
+              </a>
+        <h1 class="font-[Newsreader] italic text-3xl md:text-4xl lg:text-5xl leading-tight fade-title">
+          Professional Experience
+        </h1>
+        <p class="font-mono text-zinc-400 text-sm fade-phrase">
+          TEMP
+        </p>
+      </header>
+
+      <ol class="relative border-l border-white/10 overflow-y-auto pl-6 no-scrollbar flex-1 fade-projects">
+          <li class="timeline-item relative mb-6 pl-4">
+            <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
+            <div class="content pr-2 no-scrollbar">
+              <time class="text-sm font-mono leading-none text-body">INCOMING JUL 2026</time>
+              <h3 class="text-lg font-mono bold text-heading my-2">SDE @ IBM</h3>
+              <p class="mb-4 text-base font-normal text-body">Excited to join IBM as a full time software developer! 
+              </p>
+            </div>
+          </li>
+          <li class="timeline-item relative mb-6 pl-4">
+            <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
+            <div class="content pr-2 no-scrollbar">
+              <time class="mb-1 text-sm font-mono leading-none text-body">MAR 2026 - JUN 2026</time>
+              <h3 class="text-lg font-mono bold text-heading my-2">RDO @ Stealth Startup</h3>
+              <p class="mb-4 text-base font-normal text-body">Supporting data collection workflows for machine learning systems using robotic platforms <br>
+                Ensuring data quality, consistency, and coverage across real-world scenarios <br>
+                Identifying edge cases and contributing to improvements in system performance</p>
+            </div>
+          </li>
+      </ol>
+
+      <!-- <script>
+        (function(){
+          const container = document.querySelector('.border-l');
+          const items = document.querySelectorAll('.timeline-item');
+          let currentActive = null;
+
+          function setActive(item){
+            if(currentActive === item) return;
+            items.forEach(i=> i.classList.remove('is-active'));
+            if(item) item.classList.add('is-active');
+            currentActive = item;
+          }
+
+          // hover sets active temporarily by styling the dot directly
+          items.forEach(item=>{
+            const dot = item.querySelector('.dot');
+            item.addEventListener('mouseenter', ()=>{ dot.classList.add('bg-orange-500','scale-110','ring-4','ring-orange-500/20'); });
+            item.addEventListener('mouseleave', ()=>{
+              // remove hover styles; observer will restore active style
+              dot.classList.remove('bg-orange-500','scale-110','ring-4','ring-orange-500/20');
+            });
+          });
+
+          // IntersectionObserver to keep active dot in view while scrolling
+          const observerRoot = container;
+          const observer = new IntersectionObserver((entries)=>{
+            // pick the entry with largest intersectionRatio
+            let visible = entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio - a.intersectionRatio)[0];
+            if(visible){
+              const item = visible.target.closest('.timeline-item');
+              setActive(item);
+              document.querySelectorAll('.dot').forEach(d=> d.classList.remove('bg-orange-500','scale-110','ring-4','ring-orange-500/20'));
+              const dot = item.querySelector('.dot');
+              if(dot) dot.classList.add('bg-orange-500','scale-110','ring-4','ring-orange-500/20');
+            }
+          },{ root: observerRoot, threshold: [0.25,0.5,0.75] });
+
+          items.forEach(i=> {
+            const content = i.querySelector('.content');
+            if(content) observer.observe(content);
+          });
+        })();
+      </script> -->
+
+      <footer class="pt-10 border-t border-white/10 text-center md:text-left">
+        <p class="font-mono text-xs text-zinc-500">
+          © 2026 Chuhui Han
+        </p>
+      </footer>
+      
+    </div>
+  </main>
+</body>
+</html>

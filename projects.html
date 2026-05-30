@@ -5,28 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects – Chuhui Han</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes fadeIn { from {opacity:0; transform: translateY(8px);} to {opacity:1; transform: translateY(0);} }
-    @keyframes typeWriter { 
-      from { width: 0; } 
-      to { width: 100%; } 
-    }
-    
-    /* Name fade-in */
-    .fade-title { opacity:0; animation: fadeIn 700ms ease-out 0ms forwards; }
-
-    .fade-phrase { opacity: 0; animation:fadeIn 400ms ease-out 700ms forwards; }
-    
-    /* Links fade-in */
-    .fade-projects { opacity:0; animation: fadeIn 700ms ease-out 1050ms forwards; }
-    
-    @media (prefers-reduced-motion: reduce) { 
-      .fade-name, .fade-berkeley, .fade-photo, .fade-links { 
-        animation: none; 
-        opacity: 1; 
-      } 
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="h-screen bg-[#191A1A] text-zinc-100 flex flex-col overflow-hidden">
@@ -34,158 +13,130 @@
     <div class="mx-auto max-w-5xl w-full px-6 py-8 md:py-12 space-y-8 flex flex-col overflow-hidden flex-1">
 
       <header class="flex flex-col items-center md:items-start gap-6 text-center md:text-left flex-shrink-0">
-              <a href="index.html" class="font-mono group w-fit text-zinc-200 underline decoration-dotted underline-offset-4 hover:text-white text-sm">
+              <a href="index.html" class="link-accent font-mono group w-fit underline decoration-dotted underline-offset-4 text-sm">
                   <span class="ml-1 inline-block transition-transform group-hover:translate-x-[-0.2rem]">←</span>
                   back home
               </a>
         <h1 class="font-[Newsreader] italic text-3xl md:text-4xl lg:text-5xl leading-tight fade-title">
           Projects and Experience
         </h1>
-        <p class="font-mono text-zinc-400 text-sm fade-phrase">
-          TEMP
+        <p class="font-mono text-zinc-400 text-md fade-phrase">
+          <span class="typewriter typewriter-projects">Some of the things I've been working on lately</span>
         </p>
       </header>
 
-      <ol class="relative border-l border-white/10 overflow-y-auto pl-6 no-scrollbar flex-1 fade-projects">
+      <ol class="relative border-l border-white/10 overflow-y-auto pl-6 flex-1 fade-projects no-scrollbar">
           <li class="timeline-item relative mb-6 pl-4">
             <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
-            <div class="content pr-2 no-scrollbar">
-              <time class="text-sm font-mono leading-none text-body">NOV 2026 - Current</time>
-              <h3 class="text-lg font-mono bold text-heading my-2">CookCompanion</h3>
-              <p class="mb-4 text-base font-normal text-body">Cooking app that takes in different ingredients and outputs a recipe that attempts to use all of the ingredients given.
-                Built with express.js, next.js, saving ingredients/recipes to mongoDB, and styled with shadcn/ui. Currently testing different recipe APIs to find best performing.
+            <div class="content pr-2">
+              <time class="text-sm font-mono leading-none text-body">NOV 2025 - Current</time>
+              <h3 class="text-lg font-mono bold text-heading my-2">Chefin</h3>
+              <p class="mb-4 text-base font-normal text-body">Cooking app that generates recipes based on a user’s available ingredients, optimizing to use as many inputs as possible while maintaining realistic cooking constraints.
+
+                Built with Next.js and Express.js, with ingredient and recipe persistence in MongoDB. Designed with RESTful APIs in mind for ingredient management, recipe generation, and saved recipes.
+                
+                Currently experimenting with and evaluating multiple different recipe generation APIs, comparing output quality, ingredient coverage, and latency. Styled using shadcn/ui.
               </p>
-              <a href="#" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+              <a href="https://github.com/chuhuihan/chefin" target = "_blank" rel = "noopener noreferrer" class="btn-accent inline-flex items-center bg-neutral-secondary-medium box-border border shadow-xs font-mono leading-5 rounded-base text-sm px-4 py-2.5 focus:ring-4 focus:ring-neutral-tertiary focus:outline-none">
                 github
               </a>
-              <a href="#" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
-                try it out!
+              <a href="#" class="btn-accent inline-flex items-center bg-neutral-secondary-medium box-border border shadow-xs font-mono leading-5 rounded-base text-sm px-4 py-2.5 focus:ring-4 focus:ring-neutral-tertiary focus:outline-none">
+                try it out! (coming soon)
               </a>
             </div>
           </li>
           <li class="timeline-item relative mb-6 pl-4">
             <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
-            <div class="content pr-2 no-scrollbar">
+            <div class="content pr-2">
               <time class="mb-1 text-sm font-mono leading-none text-body">NOV 2025 - DEC 2025</time>
               <h3 class="text-lg font-mono bold text-heading my-2">Semiconductor Market Prediction</h3>
-              <p class="mb-4 text-base font-normal text-body">Worked in a group of 5 to train and test three different machine learning models to predict semiconductor market trends. Used historical data from the semiconductor industry and financial 
-                markets to build predictive models.</p>
-              <a href="media/mlreport.pdf" target = "_blank" rel = "noopener noreferrer" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+              <p class="mb-4 text-base font-normal text-body">Collaborated in a team of five to analyze historical semiconductor industry and financial market data to predict short-term and medium-term market trends.
+
+                Designed, trained, and evaluated three different machine learning models, comparing performance using metrics such as RMSE. Focused on feature engineering from time-series financial data and assessing model robustness under volatile market conditions.</p>
+              <a href="media/mlreport.pdf" target = "_blank" rel = "noopener noreferrer" class="btn-accent inline-flex items-center bg-neutral-secondary-medium box-border border shadow-xs font-mono leading-5 rounded-base text-sm px-4 py-2.5 focus:ring-4 focus:ring-neutral-tertiary focus:outline-none">
                 market prediction writeup
               </a>
             </div>
           </li>
           <li class="timeline-item relative mb-6 pl-4">
             <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
-            <div class="content pr-2 no-scrollbar">
+            <div class="content pr-2">
               <time class="mb-1 text-sm font-mono leading-none text-body">AUG 2025 - DEC 2025</time>
               <h3 class="text-lg font-mono bold text-heading my-2">Computer Vision</h3>
-              <p class="mb-4 text-base font-normal text-body">Collection of projects done for a computer vision course at UC Berkeley. Includes projects on image classification, object detection, and image segmentation using PyTorch and OpenCV.</p>
-              <a href="https://chuhuihan.me/cs180-portfolio/index.html" target = "_blank" rel = "noopener noreferrer" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
-                cs180 berkeley
+              <p class="mb-4 text-base font-normal text-body">Collection of projects exploring computer vision from first principles, spanning image formation, image processing, multi-view geometry, and modern generative models for UC Berkeley course CS180.
+
+                Implemented core vision techniques including image filtering and convolution, Fourier analysis, image pyramids and blending, homographies and image mosaics, and automatic image alignment.</p>
+              <a href="https://chuhuihan.me/cs180-portfolio/index.html" target = "_blank" rel = "noopener noreferrer" class="btn-accent inline-flex items-center bg-neutral-secondary-medium box-border border shadow-xs font-mono leading-5 rounded-base text-sm px-4 py-2.5 focus:ring-4 focus:ring-neutral-tertiary focus:outline-none">
+                cs180 projects
               </a>
             </div>
           </li>
           <li class="timeline-item relative mb-6 pl-4">
             <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
-            <div class="content pr-2 no-scrollbar">
+            <div class="content pr-2">
               <time class="text-sm font-mono leading-none text-body">APRIL 2025 - MAY 2025</time>
               <h3 class="text-lg font-mono bold text-heading my-2">Perceptrix</h3>
-              <p class="mb-4 text-base font-normal text-body">Glasses try on app that detects a user's face shape and recommends glasses shapes based on the face shape. Also allows
-                for virtual try on of glasses using augmented reality. Built with React and Expo, using TensorFlow.js for face detection and shape classification. Worked in a 
-                team of 5 to design and implement the app using AGILE methodology over a span of 8 weeks; presented final product to ~200 atendees at the Jacobs Hall of Design 
-                at UC Berkeley. 
+              <p class="mb-4 text-base font-normal text-body">Augmented-reality glasses try-on app that detects a user’s face shape and recommends compatible eyewear styles.
+
+                Built with React and Expo, using TensorFlow.js for face detection and face-shape classification. Implemented real-time virtual try-on using AR overlays.
+                
+                Worked in a team of five using Agile methodology over eight weeks, contributing to both frontend development and ML integration. Presented the final product to ~200 attendees at UC Berkeley’s Jacobs Hall of Design.
               </p>
-              <a href="https://github.com/vjchen03/perceptrix" target = "_blank" rel = "noopener noreferrer" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+              <a href="https://github.com/vjchen03/perceptrix" target = "_blank" rel = "noopener noreferrer" class="btn-accent inline-flex items-center bg-neutral-secondary-medium box-border border shadow-xs font-mono leading-5 rounded-base text-sm px-4 py-2.5 focus:ring-4 focus:ring-neutral-tertiary focus:outline-none">
                 github
               </a>
             </div>
           </li>
           <li class="timeline-item relative mb-6 pl-4">
             <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
-            <div class="content pr-2 no-scrollbar">
+            <div class="content pr-2">
               <time class="mb-1 text-sm font-mono leading-none text-body">JUNE 2024 - AUGUST 2024</time>
               <h3 class="text-lg font-mono bold text-heading my-2">Football Analysis System</h3>
-              <p class="text-base font-normal text-body">loren ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl eget nunc.</p>
+              <p class="text-base font-normal text-body">Real-time football analytics system leveraging computer vision and machine learning to track players, referees, and the ball during live gameplay.
+
+                Trained YOLOv8 on Bundesliga match footage for object detection, applied K-means clustering to group players by team, and used optical flow to track player movement and speed across frames.
+                
+                Planning to revisit with personal game footage, hoping to bring professional-like statistics to my own game.
+              </p>
             </div>
           </li>
           <li class="timeline-item relative mb-6 pl-4">
             <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
-            <div class="content pr-2 no-scrollbar">
+            <div class="content pr-2">
               <time class="mb-1 text-sm font-mono leading-none text-body">AUG 2023 - DEC 2023</time>
               <h3 class="text-lg font-mono bold text-heading my-2">Artificial Intelligence</h3>
-              <p class="mb-4 text-base font-normal text-body">Collection of projects for UC berkeley CS188 - Intro to Artificial Intelligence. Worked on search agents, min-maxing,
-                reinforcement learning, MDPs and bayes nets, and machine learning. 
+              <p class="mb-4 text-base font-normal text-body">Collection of hands-on projects for UC Berkeley CS188 exploring intelligent decision-making, planning, learning, and reasoning under uncertainty. Projects ranged from search and game-playing agents to probabilistic inference systems and classical machine learning models implemented from scratch.
               </p>
-              <a href="#" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+              <a href="https://github.com/chuhuihan/cs188" target = "_blank" rel = "noopener noreferrer" class="btn-accent inline-flex items-center bg-neutral-secondary-medium box-border border shadow-xs font-mono leading-5 rounded-base text-sm px-4 py-2.5 focus:ring-4 focus:ring-neutral-tertiary focus:outline-none">
                 github
               </a>
             </div>
           </li>
           <li class="timeline-item relative mb-6 pl-4">
             <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
-            <div class="content pr-2 no-scrollbar">
+            <div class="content pr-2">
               <time class="mb-1 text-sm font-mono leading-none text-body">JUN 2023 - AUG 2023</time>
-              <h3 class="text-lg font-mono bold text-heading my-2">Semester Abroad @ Hong Kong Universty of Science and Technology</h3>
-              <p class="text-base font-normal text-body">loren ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl eget nunc.</p>
+              <h3 class="text-lg font-mono bold text-heading my-2">Semester Abroad @ Hong Kong University of Science and Technology</h3>
+              <p class="text-base font-normal text-body">Studied database systems and completed a capstone project optimizing an internal student-faculty project matching platform.
+
+                Improved query performance by 3× through indexing optimization, query restructuring, and eliminating inefficient joins. Gained hands-on experience with performance profiling and real-world SQL optimization.
+              </p>
             </div>
           </li>
-                    <li class="timeline-item relative mb-6 pl-4">
+          <li class="timeline-item relative mb-6 pl-4">
             <span class="dot absolute -left-2 top-3 w-3 h-3 rounded-full bg-zinc-400 border-2 border-white/10 transition-transform"></span>
-            <div class="content pr-2 no-scrollbar">
+            <div class="content pr-2">
               <time class="mb-1 text-sm font-mono leading-none text-body">MAR 2022 - MAY 2022</time>
               <h3 class="text-lg font-mono bold text-heading my-2">Gitlet</h3>
-              <p class="mb-4 text-base font-normal text-body">loren ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl eget nunc.</p>
-              <a href="https://github.com/chuhuihan/gitlet" target = "_blank" rel = "noopener noreferrer" class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+              <p class="mb-4 text-base font-normal text-body">A simplified version control system inspired by Git, supporting core version control features such as repository initialization, staging, committing, branching, merging, and checkout.
+
+                Built in Java, using underlying data structures to efficiently store commit graphs, file snapshots, and branch pointers, using multiple different algorithms to traverse commit graph and support git functionality.</p>
+              <a href="https://github.com/chuhuihan/gitlet" target = "_blank" rel = "noopener noreferrer" class="btn-accent inline-flex items-center bg-neutral-secondary-medium box-border border shadow-xs font-mono leading-5 rounded-base text-sm px-4 py-2.5 focus:ring-4 focus:ring-neutral-tertiary focus:outline-none">
                 github
               </a>
             </div>
           </li>
       </ol>
-
-      <!-- <script>
-        (function(){
-          const container = document.querySelector('.border-l');
-          const items = document.querySelectorAll('.timeline-item');
-          let currentActive = null;
-
-          function setActive(item){
-            if(currentActive === item) return;
-            items.forEach(i=> i.classList.remove('is-active'));
-            if(item) item.classList.add('is-active');
-            currentActive = item;
-          }
-
-          // hover sets active temporarily by styling the dot directly
-          items.forEach(item=>{
-            const dot = item.querySelector('.dot');
-            item.addEventListener('mouseenter', ()=>{ dot.classList.add('bg-orange-500','scale-110','ring-4','ring-orange-500/20'); });
-            item.addEventListener('mouseleave', ()=>{
-              // remove hover styles; observer will restore active style
-              dot.classList.remove('bg-orange-500','scale-110','ring-4','ring-orange-500/20');
-            });
-          });
-
-          // IntersectionObserver to keep active dot in view while scrolling
-          const observerRoot = container;
-          const observer = new IntersectionObserver((entries)=>{
-            // pick the entry with largest intersectionRatio
-            let visible = entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio - a.intersectionRatio)[0];
-            if(visible){
-              const item = visible.target.closest('.timeline-item');
-              setActive(item);
-              document.querySelectorAll('.dot').forEach(d=> d.classList.remove('bg-orange-500','scale-110','ring-4','ring-orange-500/20'));
-              const dot = item.querySelector('.dot');
-              if(dot) dot.classList.add('bg-orange-500','scale-110','ring-4','ring-orange-500/20');
-            }
-          },{ root: observerRoot, threshold: [0.25,0.5,0.75] });
-
-          items.forEach(i=> {
-            const content = i.querySelector('.content');
-            if(content) observer.observe(content);
-          });
-        })();
-      </script> -->
 
       <footer class="pt-10 border-t border-white/10 text-center md:text-left">
         <p class="font-mono text-xs text-zinc-500">

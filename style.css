@@ -1,9 +1,179 @@
-/* Using Tailwind utilities instead; file intentionally left blank. */
-	/* position: relative; */
+/* Custom styles layered on top of Tailwind utilities */
 
-.newsreader-<Newsreader> {
-  font-family: "Newsreader", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+/* Accent color (single place to tweak) */
+:root {
+  --accent: #5397e4;
+  --accent-muted: rgba(83, 151, 228, 0.25);
+}
+
+/* Accent link hover */
+a.link-accent {
+  color: rgb(228 228 231);
+  transition: color 0.2s ease;
+}
+a.link-accent:hover {
+  color: var(--accent);
+}
+
+/* Accent for timeline dots */
+.timeline-item .dot {
+  background-color: var(--accent);
+  border-color: var(--accent-muted);
+}
+
+/* Project/button links: accent border and hover */
+a.btn-accent {
+  border-color: rgb(63 63 70);
+  color: rgb(228 228 231);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+a.btn-accent:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Shared fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Home page fades */
+.fade-name {
+  opacity: 0;
+  animation: fadeIn 700ms ease-out 0ms forwards;
+}
+
+.fade-berkeley {
+  opacity: 0;
+  animation: fadeIn 500ms ease-out 500ms forwards;
+  display: inline-block;
+}
+
+.fade-email {
+  opacity: 0;
+  animation: fadeIn 700ms ease-out 0ms forwards;
+}
+
+.fade-photo {
+  opacity: 0;
+  animation: fadeIn 500ms ease-out 1000ms forwards;
+}
+
+.fade-links {
+  opacity: 0;
+  animation: fadeIn 500ms ease-out 1300ms forwards;
+}
+
+/* Projects page fades */
+.fade-title {
+  opacity: 0;
+  animation: fadeIn 700ms ease-out 0ms forwards;
+}
+
+.fade-phrase {
+  opacity: 0;
+  animation: fadeIn 400ms ease-out 700ms forwards;
+}
+
+.fade-projects {
+  opacity: 0;
+  animation: fadeIn 700ms ease-out 1050ms forwards;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--accent);
+  }
+}
+
+.typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--accent);
+  width: 0;
+  animation: blink-caret 0.75s step-end infinite 4;  /* caret only; width animation per class */
+}
+
+/* Index: 27 chars */
+.typewriter-home {
+  animation:
+    typewriter-home 1.8s steps(24, end) 0.4s forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typewriter-home {
+  from { width: 0; }
+  to { width: 24ch; }
+}
+
+/* Projects: 42 chars */
+.typewriter-projects {
+  animation:
+    typewriter-projects 1.8s steps(42, end) 0.4s forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typewriter-projects {
+  from { width: 0; }
+  to { width: 102%; }
+}
+
+/* Simple design-system style helpers used on projects page */
+.text-body {
+  color: rgb(228 228 231);
+}
+
+.text-heading {
+  color: rgb(244 244 245);
+}
+
+.bg-neutral-secondary-medium {
+  background-color: rgb(39 39 42);
+}
+
+.bg-neutral-tertiary-medium {
+  background-color: rgb(63 63 70);
+}
+
+.border-default-medium {
+  border-color: rgb(63 63 70);
+}
+
+
+/* Hide scrollbar but keep scrolling (projects timeline) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Motion reduction */
+@media (prefers-reduced-motion: reduce) {
+  .fade-name,
+  .fade-berkeley,
+  .fade-email,
+  .fade-photo,
+  .fade-links,
+  .fade-title,
+  .fade-phrase,
+  .fade-projects,
+  .typewriter {
+    animation: none;
+    opacity: 1;
+    border-right: none;
+  }
 }

@@ -6,38 +6,7 @@
   <title>Chuhui Han</title>
   <!-- TailwindCSS via CDN only (no build setup needed) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes fadeIn { from {opacity:0; transform: translateY(8px);} to {opacity:1; transform: translateY(0);} }
-    @keyframes typeWriter { 
-      from { width: 0; } 
-      to { width: 100%; } 
-    }
-    
-    /* Name fade-in */
-    .fade-name { opacity:0; animation: fadeIn 700ms ease-out 0ms forwards; }
-    
-    /* Berkeley text letter-by-letter */
-    .fade-berkeley { 
-      opacity: 0;
-      animation: fadeIn 500ms ease-out 500ms forwards;
-      display: inline-block;
-    }
-
-    .fade-email { opacity: 0; animation:fadeIn 700ms ease-out 0ms forwards; }
-    
-    /* Photo fade-in */
-    .fade-photo { opacity:0; animation: fadeIn 500ms ease-out 1000ms forwards; }
-    
-    /* Links fade-in */
-    .fade-links { opacity:0; animation: fadeIn 500ms ease-out 1300ms forwards; }
-    
-    @media (prefers-reduced-motion: reduce) { 
-      .fade-name, .fade-berkeley, .fade-photo, .fade-links { 
-        animation: none; 
-        opacity: 1; 
-      } 
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="min-h-screen bg-[#191A1A] text-zinc-100 flex items-center justify-center">
   <main class="w-full">
@@ -50,12 +19,12 @@
             <span class="block">Han</span>
           </h1>
 
-          <p class="font-mono mx-auto md:mx-0 text-zinc-300 text-base text-sm fade-berkeley">
-            UC Berkeley 25' CS + DS
+          <p class="font-mono mx-auto md:mx-0 text-zinc-300 text-base text-sm">
+            <span class="typewriter typewriter-home">UC Berkeley 25' CS & DS</span>
           </p>
 
           <p>
-            <a href="mailto:chuhuihan@berkeley.edu" class="inline-block font-mono text-sm md:text-base text-zinc-200 underline-offset-4 hover:text-white fade-email">chuhuihan@berkeley.edu</a>
+            <a href="mailto:chuhuihan@berkeley.edu" class="link-accent inline-block font-mono text-sm md:text-base underline decoration-dotted underline-offset-4 text-sm fade-email">chuhuihan@berkeley.edu</a>
           </p>
         </section>
 
@@ -76,19 +45,19 @@
               experience 
               <span class="ml-1 inline-block transition-transform group-hover:translate-x-0.5">→</span>
             </a>
-            <a href="projects.html" class="font-mono group w-fit text-zinc-200 underline decoration-dotted underline-offset-4 hover:text-white text-sm">
+            <a href="projects.html" class="link-accent font-mono group w-fit underline decoration-dotted underline-offset-4 text-sm">
               projects 
               <span class="ml-1 inline-block transition-transform group-hover:translate-x-0.5">→</span>
             </a>
-            <a href="https://www.linkedin.com/in/chuhuihan/" target="_blank" rel = "noopener noreferrer" class="font-mono group w-fit text-zinc-200 underline decoration-dotted underline-offset-4 hover:text-white text-sm">
+            <a href="https://www.linkedin.com/in/chuhuihan/" target="_blank" rel = "noopener noreferrer" class="link-accent font-mono group w-fit underline decoration-dotted underline-offset-4 text-sm">
               linkedin 
               <span class="ml-1 inline-block transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
-            <a href="https://github.com/chuhuihan" target="_blank" rel = "noopener noreferrer" class="font-mono group w-fit text-zinc-200 underline decoration-dotted underline-offset-4 hover:text-white text-sm">
+            <a href="https://github.com/chuhuihan" target="_blank" rel = "noopener noreferrer" class="link-accent font-mono group w-fit underline decoration-dotted underline-offset-4 text-sm">
               github 
               <span class="ml-1 inline-block transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
-            <a href="./media/resume.pdf" target = "_blank" rel = "noopener noreferrer" download="chuhuihan resume.pdf" class="font-mono group w-fit text-zinc-200 underline decoration-dotted underline-offset-4 hover:text-white text-sm">
+            <a href="./media/chuhuihan resume.pdf" target = "_blank" rel = "noopener noreferrer" download="chuhuihan resume.pdf" class="link-accent font-mono group w-fit underline decoration-dotted underline-offset-4 text-sm">
               resume
               <span class="ml-1 inline-block transition-transform group-hover:translate-y-0.5">↓</span>
             </a>
